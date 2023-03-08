@@ -36,7 +36,7 @@ const vue_app = Vue.createApp({
       movies: [],
       /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
       title: "IMDB + Jake's Top 8 Movies",
-      owner: "Jake Adams",
+      owner: "Jake",
       github: "https://github.com/523jadams/NJIT-3_StarterFiles-masterV2",
     };
   },
