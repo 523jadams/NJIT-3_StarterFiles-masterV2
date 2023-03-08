@@ -1,6 +1,7 @@
 /* SITE.JS: THIS FILE CONTAINS THE METHODS/FUNCTIONS AND VARIABLES CONTROLLING YOUR SITE
 //
 */
+
 /* NOTE: MOVIES.JSON CONTAINS A LIST OF MOVIES AND ACCOMPANYING METADATA
 //
 //    They are in the following format:
@@ -22,7 +23,6 @@
 const vue_app = Vue.createApp({
   // This automatically imports your movies.json file and puts it into
   //   the variable: movies
-
   created() {
     fetch("movies.json")
       .then((response) => response.json())
@@ -30,69 +30,71 @@ const vue_app = Vue.createApp({
         this.movies = json;
       });
   },
-
   data() {
     return {
+      // This holds your movies.json data.
       movies: [],
+      /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
       title: "IMDB + Jake's Top 8 Movies",
-      owner: "Jake",
-      github:
-        "https://github.com/523jadams/NJIT-3_StarterFiles-masterV2",
+      owner: "Jake Adams",
+      github: "https://github.com/523jadams/NJIT-3_StarterFiles-masterV2",
     };
   },
-
   methods: {
     getMonthText(dateArray) {
+      let month = "";
       switch (dateArray[1]) {
         case 1:
           month = "January";
           break;
         case 2:
-          Month = "February";
+          month = "February";
           break;
         case 3:
-          Month = "March";
+          month = "March";
           break;
         case 4:
-          Month = "April";
+          month = "April";
           break;
         case 5:
-          Month = "May";
+          month = "May";
           break;
         case 6:
-          Month = "June";
+          month = "June";
           break;
         case 7:
-          Month = "July";
+          month = "July";
           break;
         case 8:
-          Month = "August";
+          month = "August";
           break;
         case 9:
-          Month = "September";
+          month = "September";
           break;
         case 10:
-          Month = "October";
+          month = "October";
           break;
         case 11:
-          Month = "November";
+          month = "November";
           break;
         case 12:
-          Month = "December";
-          break;
+          month = "December";
       }
-
-      return Month + " " + dataArray[2] + ", " + dataArray[1];
-
-      /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+      return month + " " + dateArray[2] + ", " + dateArray[0];
     },
-
-    timeText(minutes) {
-      var h = Math.floor(minutes / 60);
-      var m = minutes % 60;
-      return h + " hours " + m + " minutes ";
+    posterClick(movie) {
+      movie.posterindex++;
+      if (movie.posterindex > movie.posters.length - 1) {
+        movie.posterindex = 0;
+      }
+    },
+    timeText(min) {
+      let hours = Math.floor(min / 60);
+      let minutes = min % 60;
+      return hours + "h " + minutes + "m ";
     },
   },
 });
+
 
 vue_app.mount("#vue_app");
