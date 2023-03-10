@@ -90,6 +90,31 @@ body {
     top: -20px;
 }
 
+/* dislikes and likes */
+
+.dislikes:hover{
+    background-color: #fdd6d6;
+    color: #f65a5b;
+}
+
+.dislikes{
+    background-color: #f65a5b;
+    color: white;
+}
+
+.likes:hover{
+    background-color: #9edd87;
+    color: #008700;
+}
+
+.likes{
+    background-color: #008700;
+    color: white;
+}
+
+
+
+
 /* This shapes your like and dislike buttons */
 .likes,
 .dislikes {
