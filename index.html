@@ -46,8 +46,8 @@
 						<p class="runtime">Runtime: {{ timeText(movies[index].runtime) }} </p>
 						<p class="released">Released: {{ getMonthText(movies[index].released) }} | Rated: {{
 							movies[index].rating }}</p>
-						<p class="websites">Websites: <a :href="movies[0].imdb" target="_blank"> IMDb </a> | <a
-								:href="movies[0].website" target="_blank"> Website </a></p>
+						<p class="websites">Websites: <a :href="movies[index].imdb" target="_blank"> IMDb </a> | <a
+								:href="movies[index].website" target="_blank"> Website </a></p>
 
 						<div class="social">
 							<p class="likes" @click="movies[index].likes++"><i class="bi bi-hand-thumbs-up"
